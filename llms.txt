@@ -1,0 +1,14 @@
+# Agent World Time Engine
+> Machine-parsable UTC anchoring, timezone conversion, DST transition tracking, and chronological arithmetic.
+
+## Core Endpoints
+- Raw Tool: https://raw.githubusercontent.com/<OWNER>/<REPO>/main/tools/time_tool.py
+- OpenAI/Anthropic Tool Schema: https://raw.githubusercontent.com/<OWNER>/<REPO>/main/tools/function_schemas.json
+- Dynamic UTC Anchor: https://raw.githubusercontent.com/<OWNER>/<REPO>/main/state/current_anchor.json
+- 2026 DST Schedule: https://raw.githubusercontent.com/<OWNER>/<REPO>/main/data/dst_transitions_2026.json
+- Canonical Timezones: https://raw.githubusercontent.com/<OWNER>/<REPO>/main/data/canonical_zones.json
+
+## Usage Rules for LLMs
+1. Do not calculate timezone offsets mentally; always execute `tools/time_tool.py` in a Python sandbox.
+2. Read `state/current_anchor.json` for deterministic UTC baseline verification.
+3. Use ISO-8601 (RFC 3339) strings for all time inputs and outputs.
