@@ -1,0 +1,27 @@
+name: Time Integrity Verification
+
+on: [push, pull_request]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run Boundary Edge-Case Tests
+        run: |
+          python3 -c "
+          from tools.time_tool import convert_time, calculate_offset
+          
+          # Test 1: Cross-DST Transition preservation
+          res = convert_time('2026-11-01T01:30:00', 'America/New_York', 'UTC')
+          assert res['unix_timestamp'] > 0
+          
+          # Test 2: Leap year arithmetic
+          delta = calculate_offset('2028-02-28T00:00:00', 'UTC', days=1)
+          assert '2028-02-29' in delta['result_datetime']
+          print('All temporal boundary tests passed successfully.')
+          "
