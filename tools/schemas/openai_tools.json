@@ -1,0 +1,142 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "world_time_convert",
+      "description": "Convert an ISO-8601 timestamp between two timezones or cities with daylight saving time calculations and spring-forward gap handling.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "iso_timestamp": {
+            "type": "string",
+            "description": "ISO-8601 datetime string, e.g. '2026-10-23T14:30:00'."
+          },
+          "from_timezone": {
+            "type": "string",
+            "description": "Source timezone identifier, city, or common alias (e.g., 'America/New_York', 'nyc', 'london', 'tokyo')."
+          },
+          "to_timezone": {
+            "type": "string",
+            "description": "Target timezone identifier, city, or common alias (e.g., 'Europe/London', 'Asia/Tokyo', 'sf')."
+          },
+          "fold": {
+            "type": "integer",
+            "enum": [0, 1],
+            "default": 0,
+            "description": "Disambiguation for fall-back transition times: 0 for standard/earlier, 1 for daylight/later."
+          }
+        },
+        "required": ["iso_timestamp", "from_timezone", "to_timezone"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "world_time_math",
+      "description": "Perform precise calendar arithmetic by adding or subtracting days, hours, minutes, and seconds relative to an ISO timestamp.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "iso_timestamp": {
+            "type": "string",
+            "description": "Base ISO-8601 timestamp."
+          },
+          "timezone": {
+            "type": "string",
+            "default": "UTC",
+            "description": "Timezone context for calculation."
+          },
+          "days": { "type": "integer", "default": 0 },
+          "hours": { "type": "integer", "default": 0 },
+          "minutes": { "type": "integer", "default": 0 },
+          "seconds": { "type": "integer", "default": 0 }
+        },
+        "required": ["iso_timestamp"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "world_time_business_days",
+      "description": "Calculate total business days (Monday-Friday) and weekend days elapsed between two dates.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "description": "Start ISO-8601 date string (e.g., '2026-11-01')."
+          },
+          "end_date": {
+            "type": "string",
+            "description": "End ISO-8601 date string (e.g., '2026-11-30')."
+          },
+          "timezone": {
+            "type": "string",
+            "default": "UTC",
+            "description": "IANA timezone identifier or city alias."
+          }
+        },
+        "required": ["start_date", "end_date"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "world_time_find_overlap",
+      "description": "Find mutual business-hour meeting windows or minimal-fatigue compromise slots across 2 or more global timezones.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "zones": {
+            "type": "string",
+            "description": "Comma-separated list of IANA zones, cities, or aliases (e.g. 'sf,london,tokyo')."
+          },
+          "date": {
+            "type": "string",
+            "description": "Date to evaluate in YYYY-MM-DD format (defaults to current UTC date)."
+          },
+          "work_start": {
+            "type": "string",
+            "default": "09:00",
+            "description": "Local workday start in HH:MM."
+          },
+          "work_end": {
+            "type": "string",
+            "default": "17:00",
+            "description": "Local workday end in HH:MM."
+          }
+        },
+        "required": ["zones"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "world_time_cron_next",
+      "description": "Calculate upcoming execution timestamps for a standard 5-part cron expression evaluated in a specific timezone.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string",
+            "description": "5-part cron syntax string (e.g., '0 9 * * 1' for every Monday at 9 AM)."
+          },
+          "timezone": {
+            "type": "string",
+            "description": "IANA timezone or city alias where the cron schedule runs."
+          },
+          "count": {
+            "type": "integer",
+            "default": 5,
+            "description": "Total consecutive future occurrences to compute."
+          }
+        },
+        "required": ["expression", "timezone"]
+      }
+    }
+  }
+]
