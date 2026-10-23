@@ -1,0 +1,30 @@
+{
+  "markets": [
+    {
+      "exchange": "NYSE / NASDAQ",
+      "timezone": "America/New_York",
+      "utc_open": "14:30:00Z",
+      "utc_close": "21:00:00Z",
+      "regular_trading_hours": "09:30 - 16:00 EST/EDT"
+    },
+    {
+      "exchange": "London Stock Exchange (LSE)",
+      "timezone": "Europe/London",
+      "utc_open": "08:00:00Z",
+      "utc_close": "16:30:00Z"
+    },
+    {
+      "exchange": "Tokyo Stock Exchange (TSE)",
+      "timezone": "Asia/Tokyo",
+      "utc_open": "00:00:00Z",
+      "utc_close": "06:30:00Z",
+      "lunch_break_utc": ["02:30:00Z", "03:30:00Z"]
+    }
+  ],
+  "forex_overlaps": [
+    {
+      "session": "London / New York Overlap (Peak Volatility)",
+      "utc_window": "13:00:00Z to 17:00:00Z"
+    }
+  ]
+}
