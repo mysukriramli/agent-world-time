@@ -1,0 +1,48 @@
+{
+  "year": 2026,
+  "specification": "IANA tzdata 2026e",
+  "transitions": [
+    {
+      "region": "United States & Canada",
+      "event": "DST Start (Spring Forward)",
+      "timestamp_utc": "2026-03-08T07:00:00Z",
+      "offset_change_hours": 1,
+      "affected_zones": ["America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles", "America/Toronto"]
+    },
+    {
+      "region": "European Union & United Kingdom",
+      "event": "DST Start (Spring Forward)",
+      "timestamp_utc": "2026-03-29T01:00:00Z",
+      "offset_change_hours": 1,
+      "affected_zones": ["Europe/London", "Europe/Paris", "Europe/Berlin", "Europe/Rome", "Europe/Madrid"]
+    },
+    {
+      "region": "Australia (AEDT/ACDT)",
+      "event": "DST End (Fall Back)",
+      "timestamp_utc": "2026-04-05T16:00:00Z",
+      "offset_change_hours": -1,
+      "affected_zones": ["Australia/Sydney", "Australia/Melbourne", "Australia/Adelaide"]
+    },
+    {
+      "region": "Australia (AEDT/ACDT)",
+      "event": "DST Start (Spring Forward)",
+      "timestamp_utc": "2026-10-04T16:00:00Z",
+      "offset_change_hours": 1,
+      "affected_zones": ["Australia/Sydney", "Australia/Melbourne", "Australia/Adelaide"]
+    },
+    {
+      "region": "European Union & United Kingdom",
+      "event": "DST End (Fall Back)",
+      "timestamp_utc": "2026-10-25T01:00:00Z",
+      "offset_change_hours": -1,
+      "affected_zones": ["Europe/London", "Europe/Paris", "Europe/Berlin", "Europe/Rome", "Europe/Madrid"]
+    },
+    {
+      "region": "United States & Canada",
+      "event": "DST End (Fall Back)",
+      "timestamp_utc": "2026-11-01T06:00:00Z",
+      "offset_change_hours": -1,
+      "affected_zones": ["America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles", "America/Toronto"]
+    }
+  ]
+}
