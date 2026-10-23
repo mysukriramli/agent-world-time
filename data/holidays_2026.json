@@ -1,0 +1,11 @@
+{
+  "US": [
+    {"name": "New Year's Day", "date": "2026-01-01", "markets_closed": true},
+    {"name": "Independence Day (Observed)", "date": "2026-07-03", "markets_closed": true},
+    {"name": "Thanksgiving Day", "date": "2026-11-26", "markets_closed": true}
+  ],
+  "UK": [
+    {"name": "Early May Bank Holiday", "date": "2026-05-04", "markets_closed": true},
+    {"name": "Summer Bank Holiday", "date": "2026-08-31", "markets_closed": true}
+  ]
+}
