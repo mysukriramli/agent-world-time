@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "world_time_convert",
+        "description": "Convert an ISO-8601 timestamp between two IANA timezones with explicit DST calculation.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "iso_timestamp": {
+              "type": "string",
+              "description": "ISO-8601 string, e.g., '2026-10-23T14:30:00'"
+            },
+            "from_timezone": {
+              "type": "string",
+              "description": "Source IANA timezone, e.g., 'America/New_York'"
+            },
+            "to_timezone": {
+              "type": "string",
+              "description": "Target IANA timezone, e.g., 'Asia/Tokyo'"
+            }
+          },
+          "required": ["iso_timestamp", "from_timezone", "to_timezone"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "world_time_math",
+        "description": "Add or subtract days, hours, minutes, and seconds relative to an ISO timestamp.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "iso_timestamp": {"type": "string"},
+            "timezone": {"type": "string", "default": "UTC"},
+            "days": {"type": "integer", "default": 0},
+            "hours": {"type": "integer", "default": 0},
+            "minutes": {"type": "integer", "default": 0},
+            "seconds": {"type": "integer", "default": 0}
+          },
+          "required": ["iso_timestamp"]
+        }
+      }
+    }
+  ]
+}
