@@ -1,0 +1,16 @@
+{
+  "sf": "America/Los_Angeles",
+  "san francisco": "America/Los_Angeles",
+  "nyc": "America/New_York",
+  "new york": "America/New_York",
+  "london": "Europe/London",
+  "paris": "Europe/Paris",
+  "berlin": "Europe/Berlin",
+  "tokyo": "Asia/Tokyo",
+  "singapore": "Asia/Singapore",
+  "sydney": "Australia/Sydney",
+  "dubai": "Asia/Dubai",
+  "mumbai": "Asia/Kolkata",
+  "shanghai": "Asia/Shanghai",
+  "sao paulo": "America/Sao_Paulo"
+}
